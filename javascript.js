@@ -168,6 +168,20 @@ class LinkedList {
         }
         console.log(false)
     }
+
+    find(value){
+        let current = this.head;
+        let count = 0
+        while(current) {
+            if(current.data === value){
+                console.log(count)
+                return
+            }
+            current = current.next;
+            count++
+        }
+        console.log(null)
+    }
 }
 
 const ll = new LinkedList();
@@ -191,4 +205,4 @@ ll.printListData()
 ll.tail()
 console.log(ll)
 
-ll.contains(500)
+ll.find(100)
