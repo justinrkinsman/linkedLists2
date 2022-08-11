@@ -136,23 +136,45 @@ class LinkedList {
         let current = this.head;
         while(current.next){
             current = current.next;
-            //if(!current.next){
-                console.log(current)
-            //}
+            if(!current.next){
+                console.log(current.data)
+            }
         }
+    }
+
+    pop() {
+        let current = this.head;
+        let previous;
+        while(current.next){
+            previous = current
+            current = current.next;
+            
+            if(!current.next){
+                current.data = null
+                previous.next = null
+            }
+        }
+        this.size--
     }
 }
 
 const ll = new LinkedList();
-ll.prependValue(100)
-ll.prependValue(200)
+
 ll.prependValue(300)
+ll.prependValue(200)
+ll.prependValue(100)
 ll.appendValue(400)
 ll.insertAt(500, 10)
 ll.printListData()
 
 ll.getSize()
 
-ll.getHeadGiggity()
+//ll.getHeadGiggity()
 
 //ll.tail()
+//ll.getAt(0)
+
+ll.pop()
+ll.printListData()
+ll.tail()
+console.log(ll)
