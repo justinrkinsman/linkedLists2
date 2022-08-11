@@ -182,6 +182,19 @@ class LinkedList {
         }
         console.log(null)
     }
+
+    toString(){
+        let current = this.head;
+        let arr = []
+        while(current) {
+            let value = `( ${current.data} )`
+            arr.push(value)
+            current = current.next;
+        }
+        arr.push('null')
+        let newString = arr.join(' -> ')
+        console.log(newString)
+    }
 }
 
 const ll = new LinkedList();
@@ -206,3 +219,5 @@ ll.tail()
 console.log(ll)
 
 ll.find(100)
+
+ll.toString()
