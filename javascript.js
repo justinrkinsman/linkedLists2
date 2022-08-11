@@ -156,6 +156,18 @@ class LinkedList {
         }
         this.size--
     }
+
+    contains(value) {
+        let current = this.head;
+        while(current) {
+            if(current.data === value){
+                console.log(true)
+                return
+            }
+            current = current.next;
+        }
+        console.log(false)
+    }
 }
 
 const ll = new LinkedList();
@@ -178,3 +190,5 @@ ll.pop()
 ll.printListData()
 ll.tail()
 console.log(ll)
+
+ll.contains(500)
